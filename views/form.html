@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container col-6">
+      <h1>Adicionar comentários usando DOM</h1>
+      <div>
+        <form>
+          <h3>Queres deixar um comentário?</h3>
+          <p>
+            <input type="text" placeholder="Teu nome" class="messages"/>
+          </p>
+          <p>
+            <input type="text" placeholder="Teu email" class="messages"/>
+          </p>
+          <p>
+            <textarea
+              name="mensagens"
+              rows="4"
+              cols="50"
+              placeholder="Tua mensagem"
+              class="messages"
+            ></textarea>
+          </p>
+          <button id="submit">Submeter comentário</button>
+        </form>
+      </div>
+    </div>
+    <script src="../public/js/form.js"></script>
+  </body>
+</html>
