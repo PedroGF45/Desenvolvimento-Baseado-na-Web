@@ -1,7 +1,8 @@
-const model = require("../model/livros");
+const Livro = require("../model/livrosMongo");
 
-const indexController = function (req, res) {
-    res.render("index", { info: model.info });
+const indexView = async function (req, res) {
+    const livros =await Livro.find({})
+    res.render("index", { info: livros });
 };
 
-module.exports = {indexController};
+module.exports = {indexView};

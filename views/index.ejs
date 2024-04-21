@@ -4,7 +4,7 @@
   <body>
     <div class="container">
       <%- include('partials/header') %>
-      <h1>Bem vindo a Livraria da UMa. <a href="/bookform">Quer adicionar um livro?</a></h1>
+      <h1>Bem vindo a Livraria da UMa. <a href="/bookform/new">Quer adicionar um livro?</a></h1>
       <div class="row">
         <section class="col-md-6 col-lg-4 p-3">
           <article>
@@ -20,6 +20,8 @@
               voluptas harum magnam eos! Eum cupiditate eligendi temporibus.
               Aliquid nihil tenetur dicta dignissimos quam!
             </p>
+            <p><a href="/bookform/<%=info._id%>"> Mostra</a></p>
+            <p><a href="/bookform/<%=info._id%>/edit"> Editar</a></p>
             <button>Adicionar carrinho</button>
           </article>
         </section>
