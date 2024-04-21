@@ -1,9 +1,27 @@
 const express = require('express');
 const app = express();
 
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server);
+
+io.on("connection", function (socket) {
+    console.log("a user connected");
+    socket.on("chat", function (msg) {
+        const paraCliente = {
+            socketID: socket.id,
+            mensagem: msg,
+        };
+        io.sockets.emit("clientChat", paraCliente); //everybody and me
+    });
+});
+    
+
 app.set('view engine', 'ejs');
 app.use('*/css',express.static('public/css'));
 app.use('*/js',express.static('public/js'));
+app.use('*/SocketExample',express.static('public/js/SocketExample'));
 app.use('*/images',express.static('public/images'));
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,7 +35,9 @@ app.listen(3000, function (error) {
 const homeRoute = require("../../routes/homeRoute");
 const formRoute = require("../../routes/formRoute");
 const fetchRoute = require("../../routes/fetchRoute");
+const socketRoute = require("../../routes/socketRoute");
 
 app.use(homeRoute);
 app.use(formRoute);
 app.use(fetchRoute);
+app.use(socketRoute);

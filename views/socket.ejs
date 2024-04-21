@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head'); %>
+  <body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">DBW</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Form</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Fetch API</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Socket</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        </header>
+      <h1>Socket Tut</h1>
+      <div class="formCenter">
+        <form class="myForm"  action="">
+          <h3>Queres deixar um comentário?</h3>
+          <select name="room" id="room">
+            <option value="room1">Room 1</option>
+            <option value="room2">Room 2</option>
+            <option value="room3">Room 3</option>
+          </select>
+          <p>
+            <textarea
+              id="mensagens"
+              name="mensagem"
+              rows="4"
+              cols="50"
+              placeholder="Tua mensagem"
+            ></textarea>
+          </p>
+          <button id="submeter">Submeter comentário</button>
+        </form>       
+        <br>
+        <p id="output"></p>
+    </div>
+  </div>
+  <%- include('partials/footer'); %>  
+  <script src="/socket.io/socket.io.js"></script>
+  <script type='module' src='SocketExample/socketMain.js'></script>
+  </body>
+</html>
